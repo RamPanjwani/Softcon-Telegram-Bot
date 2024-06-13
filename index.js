@@ -1,6 +1,14 @@
 const { Telegraf } = require('telegraf');
 const bot = new Telegraf("7451074111:AAFWWI1xkIw1xbRbCoTC-X0BIF51MzBv_d4");
-const apps = require('./app.js');
+const express = require('express')
+const app = express()
+const port = 3000
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 let welcome = `
 <b>Welcome to Softcon Business Solutions!</b>
 \n\nEstablished in 1996, Softcon Business Solutions has been delivering exceptional software solutions across various verticals. Today, we are proud to be recognized as the fastest-growing retail software company, and one of "The 10 Most Trusted Retail Solution Providers" in the industry.
